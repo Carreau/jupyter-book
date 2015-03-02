@@ -1,8 +1,13 @@
+Note to reader, 
+this is a collaborative book, please feel free to contribute.
+
 # Notebook Customisation
 
 The web notebook is an extremely flexible application completely built in javascript, html and cs, which allow many modifications
 to be done to the frontend.
 
+
+A relatively active group of developers et the time of this writing have regroup a huge number of extension under the umbrella of [IPython-contrib](https://github.com/IPython-contrib/IPython-notebook-extensions). The best practice to wr
 
 ##  install nbextension
 
