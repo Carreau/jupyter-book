@@ -1,4 +1,8 @@
-# test 
+# Notebook Customisation
+
+The web notebook is an extremely flexible application completely built in javascript, html and cs, which allow many modifications
+to be done to the frontend.
+
 
 
 ##  install nbextension
