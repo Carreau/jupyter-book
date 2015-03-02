@@ -4,7 +4,6 @@ The web notebook is an extremely flexible application completely built in javasc
 to be done to the frontend.
 
 
-
 ##  install nbextension
 
 
