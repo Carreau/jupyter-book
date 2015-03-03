@@ -1,3 +1,4 @@
-## The Book Of Jupyter
+The Book Of Jupyter
+===================
 
 Please feel free to contribute !
