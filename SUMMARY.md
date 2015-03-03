@@ -1,4 +1,4 @@
 # Summary
 
-* Intro (put link)
+* [Kernel JS](kerneljs.md)
 
