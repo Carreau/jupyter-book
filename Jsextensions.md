@@ -19,6 +19,15 @@ This part describe how to decide which nbextensions are loaded. If you are an en
   - The extension should define an AMD module definition that exposes the method `load_ipython_extension` which takes not aguments.
 
 
+```
+define(function(){
+    return {
+    load_ipython_extension: function(){
+            console.log("I have been loaded ! -- my nb extension");
+        }
+    };
+})
+```
 
 
 
