@@ -57,7 +57,7 @@ Responds with `Object {}` in my case.
 
 Let's update the config 
 ```
-data['load_extensions'] = ['my_ext']
+data['load_extensions'] = {'my_ext':"main"}
 ```
 
 And update the config with the new value :
