@@ -37,6 +37,7 @@ define(function(){
 
 
 To decide which extension will be loaded, Jupyter notebook will look at its configuration, and in particular to the value of the `load_extensions` key.
+To decide which extension will be loaded, Jupyter notebook will look at its configuration, and in particular to the value of the `load_extensions` key.
 
 Yo see the current value of the config in a noteobook, open an IPython  notebook, andtype the following in a console: 
 
