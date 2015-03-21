@@ -19,15 +19,32 @@ This part describe how to decide which nbextensions are loaded. If you are an en
   - The extension should define an AMD module definition that exposes the method `load_ipython_extension` which takes not aguments.
 
 
+Here is a minimal example of AMD extension.
+
+
 ```
 define(function(){
-    return {
+  return {
+    // this will be called at extension loading time
+    //---
     load_ipython_extension: function(){
-            console.log("I have been loaded ! -- my nb extension");
-        }
-    };
+        console.log("I have been loaded ! -- my nb extension");
+    }
+    //---
+  };
 })
 ```
+
+
+Do decide which extension will be loaded, Jupyter notebook will look at its configuration, and in particular to the value of the `load_extensions` key.
+
+Yo see the current value of the config in a noteobook, open an IPython  notebook, andtype the following in a console: 
+
+```
+IPython.notebook.config
+````
+
+This give you access to the `config`object which handles loading, and updating the config. 
 
 
 
