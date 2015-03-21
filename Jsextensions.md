@@ -66,6 +66,21 @@ And update the config with the new value :
 IPython.notebook.config.update(data)
 ```
 
+The config is technically store as a json object in  `~/.ipython/profile_default/nbconfig/notebook.json`
+
+For example in  our case : 
+
+```
+// notebook.json
+{
+  "load_extensions": {"my_ext":"main"}
+}
+```
+
+You should not update this file manually, but it can be used by extension authors to modify configuration programatically and provide convenience methods to activate extensions. 
+
+
+
 
 
 
