@@ -58,14 +58,18 @@ Responds with `Object {}` in my case.
 
 Let's update the config 
 ```
-data['load_extensions'] = {"my_ext":"main"}
+var new_data = {"my_ext":true}
 ```
+
+Here the value assigned to `"my_ext"` shoudl be non-`null`. Setting the value to `null` would remove the key form the configuration object. The exact object stored does not matter as long as it is not null.
 
 And update the config with the new value :
 
 ```
-IPython.notebook.config.update(data)
+IPython.notebook.config.update(new_data)
 ```
+
+
 
 The config is technically store as a json object in  `~/.ipython/profile_default/nbconfig/notebook.json`
 
@@ -74,7 +78,7 @@ For example in  our case :
 ```
 // notebook.json
 {
-  "load_extensions": {"my_ext":"main"}
+  "load_extensions": {"my_ext":true}
 }
 ```
 
