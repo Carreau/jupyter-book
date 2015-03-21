@@ -1,15 +1,14 @@
 # JS extension. 
 
-
-javascript extensiosn are pure javascript extensions that are loaded  on the browser side. 
+Javascript extensions are pure javascript extensions that are loaded on the browser side. 
 
 They are used to change the behaviour, functionality and UI of the Jupyter notebook. 
 
-Most of the time, you  should install *nbextensions* in the directory of the same name, either system wide. You can also install *nbextensions* on your user profile. Most nbextensions provide the documentqtion to indicate how they should be installed.
+Most of the time, you  should install *nbextensions* in the directory of the same name, either system wide. You can also install *nbextensions* on your user profile. Most nbextensions provide the documentation to indicate how they should be installed.
 
 ## Activating nbextensions
 
-This part describe how to decide which nbextensions are loaded. If you are an end-user, and not interested in developping your own nbextension then you can skip this section.
+This part describe how to decide which nbextensions are loaded. If you are an end-user, and not interested in developing your own nbextension then you can skip this section.
 
 
 `Nbextension` can be loaded by provding only their name, but to meet this contidion the shoud follow the following criteria.
@@ -45,9 +44,9 @@ Yo see the current value of the config in a noteobook, open an IPython  notebook
 IPython.notebook.config
 ```
 
-The value shoudl be something like `ConfigSection {section_name: "notebook", base_url: "/", data: Object, …}`.
+The value should be something like `ConfigSection {section_name: "notebook", base_url: "/", data: Object, …}`.
  
-This give you access to the `config`object which handles loading, and updating the config. By default  the config shoudl be empty. Acees the `data`attribute to check it: 
+This give you access to the `config` object which handles loading, and updating the config. By default  the config should be empty. Access the `data` attribute to check it: 
 
 ```
 var data = IPython.notebook.config.data
