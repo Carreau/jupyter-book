@@ -52,7 +52,13 @@ You are most likely to want the same behavior than other user and/or to have but
 Also, if like me you are not a huge fan of Javascript, you prefer to avoid rewriting anonymous function in your config file. 
 
 An action is, in its simplest form a name given to a sequence of API call done in the notebook frontend. Some action are already pre-defined in Jupyter/IPython, and we prefix their name by `ipython`. Extension can also register their own action to be used.
-The API and naming of action, is still in flux, so what you read here is still approximate. 
+The API and naming of action, is still in flux, so what you read here is still approximate.
+
+As of this writing, an action is a combination of a `handler`, an `icon` and a `help_text`. The handler is a JavaScript function, that would be called in the right context  when the action is triggered. 
+The `help_text`, and `icon` are extra meta-data that are used in various context. For example, if you add an action to a toolbar a button will be created. The icon will automatically be applied to the button, and the help text will appear on hover. Actions also have the capacity to call sub-actions. This make the combination of multiple repetitive tasks, easy to customize. 
+
+
+
 
 
 
