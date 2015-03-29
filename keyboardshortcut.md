@@ -1,4 +1,4 @@
-# keyboard shortcut. 
+# Keyboard Shortcut. 
 
 
 Fair warning: All these API are unstable and can chage at any time. 
@@ -24,7 +24,7 @@ Bind some existing action in command mode, in javascript console (where `>` and 
 < undefined
 ```
 
-To see the list of availlable actions: 
+To see the list of available actions, you can issue the following in the developper console: 
 
 ```javascript
 > $.map(
@@ -41,6 +41,20 @@ To see the list of availlable actions:
 "ipython.scroll-down", "ipython.scroll-up",
 "ipython.save-notebook"]
 ```
+
+
+# Actions
+
+In the previous section, what you actually did is bound a keyboard shortcut to an action. 
+
+You are most likely to want the same behavior than other user and/or to have buttons or menu to the same things than keyboard shortcut. 
+
+Also, if like me you are not a huge fan of Javascript, you prefer to avoid rewriting anonymous function in your config file. 
+
+An action is, in its simplest form a name given to 
+
+
+
 
 
 
