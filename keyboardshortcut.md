@@ -58,6 +58,15 @@ As of this writing, an action is a combination of a `handler`, an `icon` and a `
 The `help_text`, and `icon` are extra meta-data that are used in various context. For example, if you add an action to a toolbar a button will be created. The icon will automatically be applied to the button, and the help text will appear on hover. Actions also have the capacity to call sub-actions. This make the combination of multiple repetitive tasks, easy to customize. 
 
 
+## defining an action. 
+
+// icon are taken from font-awesome. 
+// name should avoid spaces. 
+
+
+
+
+
 
 
 
