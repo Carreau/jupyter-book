@@ -52,6 +52,7 @@ You are most likely to want the same behavior than other user and/or to have but
 Also, if like me you are not a huge fan of Javascript, you prefer to avoid rewriting anonymous function in your config file. 
 
 An action is, in its simplest form a name given to a sequence of API call done in the notebook frontend. Some action are already pre-defined in Jupyter/IPython, and we prefix their name by `ipython`. Extension can also register their own action to be used.
+The API and naming of action, is still in flux, so what you read here is still approximate. 
 
 
 
