@@ -26,7 +26,7 @@ Bind some existing action in command mode, in javascript console (where `>` and 
 
 To see the list of availlable actions: 
 
-```
+```javascript
 > $.map(
      IPython.keyboard_manager.command_shortcuts.actions._actions,
      function(k,v){return v}
