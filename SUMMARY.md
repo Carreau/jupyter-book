@@ -8,4 +8,4 @@ Does pushing on github trigger build
 * [JS Nbextensions](Jsextensions.md)
 * [Keyboard Mapping](keyboardshortcut.md)
 
-Last update Sat 28
+Last update June 9th
