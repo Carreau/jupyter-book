@@ -29,7 +29,9 @@ As far as I know you can make most of what we will do in Safari. You might just 
 The developer tools are a number of panels that allow you to interact with the web page in a way much different than usual browsing. You can sort of see that as a powerful debugger that allow you to modify and inspect the running page live. 
 
 To open the developer tools, in **Chrome**, go to the `View > Developer > Developer Tools`.
-I suggest you learn the keyboard shortcut to open the Dev Tools, it's probably one of the shortcut you will use the most (with switching windows) in this tutorial. 
+I suggest you learn the keyboard shortcut to open the Dev Tools. It's probably one of the shortcut you will use the most (with switching windows) in this tutorial. 
+
+
 
 
 
