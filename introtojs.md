@@ -22,7 +22,19 @@ If you are more a fan of Firefox, I would suggest you to install the developer e
 
 
 Your other major browser are Safari on MacOS, and Internet Explorer for Windows. Unfortunately, I am not familiar with either of them. 
-As far as I know you can make most of what we will do in Safari. You might just have to enable developer mode in the advance preferences. 
+As far as I know you can make most of what we will do in Safari. You might just have to enable developer mode in the advance preferences.
+
+## Developer tools. 
+
+The developer tools are a number of panels that allow you to interact with the web page in a way much different than usual browsing. You can sort of see that as a powerful debugger that allow you to modify and inspect the running page live. 
+
+To open the developer tools, in **Chrome**, go to the `View > Developer > Developer Tools`.
+I suggest you learn the keyboard shortcut to open the Dev Tools, it's probably one of the shortcut you will use the most (with switching windows) in this tutorial. 
+
+
+
+
+
 
 
 
