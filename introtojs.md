@@ -11,4 +11,20 @@ This chapter is here to give you the necessary basics on web technologies. We wi
 ## The webrowser
 
 
-One of the key tool you use all the time when working on the web s your web browser.
+One of the key tool you use all the time when working on the web your web browser. I'm sure you use your browser everyday, but your browser can be both your best ally, or worth enemy. The number of functionalities that your browser have and can do is pretty large. Describing all the things can take days, so we will focus on the basics. I encourage you to learn more about what your browser can you by yourself. 
+
+
+### Browser Choice 
+
+As a browser of choice I will use Chrome. Chrome comes by default with a lot of baked in tools, so you will not need to install any extensions. The interface will be also consistent regardless of the Os you are using. 
+
+If you are more a fan of Firefox, I would suggest you to install the developer edition. It comes preconfigured with many defaults. It is possible to set-up default firefox to behave like developer edition, but it can take some time.
+
+
+Your other major browser are Safari on MacOS, and Internet Explorer for Windows. Unfortunately, I am not familiar with either of them. 
+As far as I know you can make most of what we will do in Safari. You might just have to enable developer mode in the advance preferences. 
+
+
+
+
+
