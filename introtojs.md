@@ -29,9 +29,20 @@ As far as I know you can make most of what we will do in Safari. You might just 
 The developer tools are a number of panels that allow you to interact with the web page in a way much different than usual browsing. You can sort of see that as a powerful debugger that allow you to modify and inspect the running page live. 
 
 To open the developer tools, in **Chrome**, go to the `View > Developer > Developer Tools`.
-I suggest you learn the keyboard shortcut to open the Dev Tools. It's probably one of the shortcut you will use the most (with switching windows) in this tutorial. 
+I suggest you learn the keyboard shortcut to open the Dev Tools. It's probably one of the shortcut you will use the most (with switching windows) in this tutorial.
+
+//// here have a screenshot of the developper tools. 
 
 
+Ok, so let's look at differents area of the developper tool you will be interested in.
+
+The far left tab, named `Elements` is the tab that allow you to view the current structure of the DOM. 
+We won't really dive into what the DOM. In a first approximation, the DOM is the current state of the HTML. You want to be to this tab if you are trying to inspect or modify the structure of the DOM. 
+
+One of the useful things is the small magnifying glass even more on the left that the `Elements`. 
+It allow you to click on a visual element in a page, and get it selected on the tree view. 
+
+Ok, let's try 
 
 
 
