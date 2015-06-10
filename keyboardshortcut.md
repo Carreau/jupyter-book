@@ -66,6 +66,7 @@ IPython.keyboard_manager.command_shortcuts.add_shortcut(
         handler:function(){
           window.open('https://xkcd.com/378/')
         }
+    }
 )
 ```
 
