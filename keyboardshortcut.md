@@ -69,6 +69,9 @@ IPython.keyboard_manager.command_shortcuts.add_shortcut(
 )
 ```
 
+This is a bit hard to type quickly enough, but _Real Programmer_
+should probably understand how to use this. 
+
 ## defining an action. 
 
 // icon are taken from font-awesome. 
