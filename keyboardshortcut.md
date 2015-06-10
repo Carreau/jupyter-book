@@ -20,7 +20,7 @@ Bind some existing action in command mode, in javascript console (where `>` and 
 > IPython.keyboard_manager.command_shortcuts.add_shortcut('Shift-k','ipython.move-selected-cell-up')
 < undefined
 
->IPython.keyboard_manager.command_shortcuts.add_shortcut('Shift-j','ipython.move-selected-cell-down')
+> IPython.keyboard_manager.command_shortcuts.add_shortcut('Shift-j','ipython.move-selected-cell-down')
 < undefined
 ```
 
@@ -57,6 +57,17 @@ The API and naming of action, is still in flux, so what you read here is still a
 As of this writing, an action is a combination of a `handler`, an `icon` and a `help_text`. The handler is a JavaScript function, that would be called in the right context  when the action is triggered. 
 The `help_text`, and `icon` are extra meta-data that are used in various context. For example, if you add an action to a toolbar a button will be created. The icon will automatically be applied to the button, and the help text will appear on hover. Actions also have the capacity to call sub-actions. This make the combination of multiple repetitive tasks, easy to customize. 
 
+The quick way to bind a function to a shortcut is to use an anonymous action:
+
+```javascript
+IPython.keyboard_manager.command_shortcuts.add_shortcut(
+    'Ctrl-C,Meta-C,Meta-b,u,t,t,e,r,f,l,y',
+    {
+        handler:function(){
+          window.open('https://xkcd.com/378/')
+        }
+)
+```
 
 ## defining an action. 
 
