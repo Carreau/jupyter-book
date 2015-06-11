@@ -71,7 +71,15 @@ You can also run a task in the background.
 > setInterval(function(){console.log('hi there')}, 3000)
 ```
 
+This will print every 3 seconds. When it annoys you enough, refresh your page, all your changes will be gone. 
 
+Let's try something more visual:
+
+```
+> $('.cell:even').slideUp('slow').slideDown('slow')
+```
+
+We won't get into details, but you did something equivalent to numpy broadcasting. You applied a function to a collection of elements of the DOM.
 
 
 
