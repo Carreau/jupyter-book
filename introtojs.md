@@ -31,7 +31,7 @@ The developer tools are a number of panels that allow you to interact with the w
 To open the developer tools, in **Chrome**, go to the `View > Developer > Developer Tools`.
 I suggest you learn the keyboard shortcut to open the Dev Tools. It's probably one of the shortcut you will use the most (with switching windows) in this tutorial.
 
-//// here have a screenshot of the developper tools. 
+![](devtools.png)
 
 
 Ok, so let's look at differents area of the developper tool you will be interested in.
