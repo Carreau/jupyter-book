@@ -34,7 +34,9 @@ I suggest you learn the keyboard shortcut to open the Dev Tools. It's probably o
 ![](devtools.png)
 
 
-Ok, so let's look at differents area of the developper tool you will be interested in.
+Ok, so let's look at different area of the developer tool you will be interested in.
+
+#### DOM Tree
 
 The far left tab, named `Elements` is the tab that allow you to view the current structure of the DOM. 
 We won't really dive into what the DOM. In a first approximation, the DOM is the current state of the HTML. You want to be to this tab if you are trying to inspect or modify the structure of the DOM. 
@@ -42,7 +44,36 @@ We won't really dive into what the DOM. In a first approximation, the DOM is the
 One of the useful things is the small magnifying glass even more on the left that the `Elements`. 
 It allow you to click on a visual element in a page, and get it selected on the tree view. 
 
-Ok, let's try 
+
+Ok, let's try to mess a bit with the DOM. In the tree view on the upper left, try to double click and edit some element of the DOM. You will see that when you hover the tree, the relevant part on the view highlight. Try to figure out where the cell, the pager, and toolbar are in a notebook page. 
+
+
+#### Css inspector. 
+
+On the right of the DOM Tree view is the Css inspector. The Css inspector allows you to observe and modify the Sss rules that apply to the current selected element. It is basically  these rules that describe the layout and appearance of the notebook page.
+
+#### Javascript console
+
+The last part of the Devtools that we will use today is the javascript console. 
+It is basicaly like an IPython console prompt, though it run in the context of the page, and accept only javascript. 
+
+It is in different than usual REPL in the sense that the javascript on the page is continually executing and does not Pause while you type at the prompt. 
+
+Let's try the basic of the console. 
+
+```javascript
+> console.log('Hello Jupyter Notebook')
+```
+
+You can also run a task in the background.
+
+```
+> setInterval(function(){console.log('hi there')}, 3000)
+```
+
+
+
+
 
 
 
