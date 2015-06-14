@@ -82,8 +82,23 @@ Let's try something more visual:
 We won't get into details, but you did something equivalent to numpy broadcasting. You applied a function to a collection of elements of the DOM.
 
 
+### Browser lies
 
 
+You are all aware that there are 2 things hard in programming: naming things, caching and of by one error. Unfortunately we have to deal with all of them in developing for the web. There exist a few extension that allow you to flush cache and reload the page at the same time. But one of the easy options is to deactivate Browser caching when your developer tools are open. 
+
+To do so with your dev tools open, click on the setting menu (gear icon on the top right) and disable caching when you are developing. 
+
+This will most likely prevent you from madness as it is easy to assume when you reload the page that you get the last version of the javascript you just saved. 
+
+Keep in mind that opening the devTools might slow down your browser. You might not see it, or feel it. Though it might have effect in case of timing bugs, and race condition. (also know as Heisenbugs by quantum physicist). Opening the devTools may make some bugs disappear. 
+
+
+
+
+### conclusion
+
+Well you get the basics for the tools, there is much more to say,, next step is to introduce the
 
 
 
