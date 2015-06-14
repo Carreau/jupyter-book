@@ -93,12 +93,14 @@ This will most likely prevent you from madness as it is easy to assume when you 
 
 Keep in mind that opening the devTools might slow down your browser. You might not see it, or feel it. Though it might have effect in case of timing bugs, and race condition. (also know as Heisenbugs by quantum physicist). Opening the devTools may make some bugs disappear. 
 
+Also by quantum physicist, I of course mean people that are both a superposition of Physicist and non-Physicist until you watch them.
 
+One last tricky-bit is that `$`, `_`, and a few other function/methods might not be and behave the same in console and in scripts. We'll see what theses are in next chapter.
 
 
 ### conclusion
 
-Well you get the basics for the tools, there is much more to say,, next step is to introduce the
+Well you get the basics for the tools, there is much more to say, but you should have enough knowledge to mess around. The goal here is to give you enough to get started. Next step is to introduce not the tool themselves but some common utilities, and non-written things that are common knowlege among web developper.
 
 
 
