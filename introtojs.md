@@ -100,7 +100,7 @@ One last tricky-bit is that `$`, `_`, and a few other function/methods might not
 
 ### conclusion
 
-Well you get the basics for the tools, there is much more to say, but you should have enough knowledge to mess around. The goal here is to give you enough to get started. Next step is to introduce not the tool themselves but some common utilities, and non-written things that are common knowlege among web developper.
+Well you get the basics for the tools, there is much more to say, but you should have enough knowledge to mess around. The goal here is to give you enough to get started. Next step is to introduce not the tool themselves but some common utilities, and non-written things that are common knowlege among web developers.
 
 
 
