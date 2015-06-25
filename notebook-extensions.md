@@ -166,4 +166,49 @@ IPython.keyboard_manager.command_shortcuts.add_shortcut('0,0,0', action_name)
 ```
 
 
-### Why use an action. 
+### Why use an action.
+
+How are things up until now ? You might feel like the code is a bit too verbose,
+and that some part are unnecessary right ? Now we will start to see why we use such
+verbose methods.
+
+You might have seen that some attributes of action seem to be unused.
+
+```
+help: 'Clear all cell and restart kernel without confirmations',
+icon : 'fa-recycle',
+help_index : '',
+```
+
+Now that your extension works go get a look in the help menu, keyboard shortcut submenu.
+If all is fine, you should see your new shortcut in there, with the help text.
+The help index is use to order/group the common shortcut together. The only last
+unused piece is the icon.
+
+With all theses attribute, you can easily bind an _action_, to either a keyboard shortcut,
+a button in a toolbar, or in a menu item (api is not there yet for that though).
+We often saw people wanting the same action in two places, and duplicating code,
+which is a bit painful. By defining action separately this make it easy to use these
+in many places keeping it DRY. This also allow you to distribute actions library
+without actually binding them and let user do their own key/icon bindings.
+
+Let see that in next section with toolbars.
+
+### toolbars.
+
+Ok, that will be pretty simple you already did all the job :-)
+
+You just need to know that following exist, and take a list of action names:
+
+`IPython.toolbar.add_buttons_group`
+
+Now, go edit your custom extension !
+
+Here is my solution:
+
+```
+IPython.toolbar.add_buttons_group(['scipy-2015.clear-all-cells-restart','ipython.restart-kernel'])
+```
+
+each call to this API will generate a new group of button with the default icons,
+and if you hover the button the help text will remind you the action.

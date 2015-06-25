@@ -13,7 +13,6 @@ define(['base/js/namespace'],function(Jupyter){
             env.notebook.kernel.restart(function(){
                 setTimeout(function(){ // wait 1 sec, 
                     // todo listen on Kernel ready event. 
-                    console.log('executing all cells')
                     env.notebook.execute_all_cells()
                 }, 1000)
                 }, on_error);
@@ -34,6 +33,8 @@ define(['base/js/namespace'],function(Jupyter){
 
         // bind 000
         IPython.keyboard_manager.command_shortcuts.add_shortcut('0,0,0', action_name) 
+
+        IPython.toolbar.add_buttons_group(['scipy-2015.clear-all-cells-restart','ipython.restart-kernel'])
           
     }
     
