@@ -16,4 +16,154 @@ Ok, so here are link to some active repos, with extensions:
  - https://github.com/ipython-contrib/IPython-notebook-extensions – check out the rigth branch dependsing on your version of IPython. If you are using IPython 3.x you most likely want extension from the 3.x branch.
  - https://bitbucket.org/ipre/calico/ look in the notebook/nbextesion folder.
 
- 
+
+Ok, let's go. I've made a minimal extension for you in extensions, link or move it over into:
+
+```bash
+$ ls ~/.ipython/nbextensions/
+hello-scipy.js
+```
+
+Ok, so now let's open a notebook and configure it to load the extension automatically.
+In a new notebook, or the one I provides with a reminder of the instructions, open the developer console
+and enter the following:
+
+
+```js
+IPython.notebook.config.update({
+  "load_extensions": {"hello-scipy":true}
+})
+```
+
+Now Reload your page, and observe the Javascript console, it should tell you what to do next !
+
+## Explanation
+
+Do not be preoccupied with what `IPython.notebook.config.update` is we will see that later.
+
+The `"load_extensions"` part take a dict with the name of extensions and wether they are loaded
+or not. It is one of the config value which is now stored on server side.
+
+There is a way to activate extensions from outside the notebook, but we won't see
+that for now.
+
+### The extension
+
+```js
+define(function(){
+
+    function _on_load(){
+          console.info('Hello SciPy 2015')
+    }
+
+    return {load_ipython_extension: _on_load };
+})
+```
+
+The define call: `define(function(){` suggest we have no dependencies,
+
+For readability we define a function that will be called on notebook load at the right time.
+We keep python convention that `_xxx` is private.
+```js
+  function _on_load(){
+        console.info('Hello SciPy 2015')
+  }
+```
+
+We only export a function called `load_ipython_extension` to the outside world:
+`return {load_ipython_extension: _on_load };`. Anything outside of this dict will
+be inaccessible for the rest of the code. You can see that as Python's `__all__`.
+
+Note that you will find legacy extensions on the internet that **do not define**
+`load_ipython_extension` and rely on IPython's Events, and `Custom.js`.
+While it does work for the time being, theses extensions will break in the future
+and are subject to race conditions.
+
+While our Javascript API is still highly in motion, and not guarantied stable,
+will try our best to make updating extension that use `load_ipython_extension` easier
+that the ones using Events and `custom.js` !
+
+
+## New keyboard shortcut !
+
+Ok, so now let's modify our extension in order to be able to actually modify the
+User interface. We will try-to create a shortcut that kill the kernel without confirmation,
+and clear all the cell, plus re-run all the things.
+
+First things, we want to get access to all the IPython instance, to do so we want
+to import the right module so that `IPython` variable can be used safely.
+
+Change the first line to the following
+
+
+```js
+define(['base/js/namespace'],function(IPython){
+```
+
+I remind you that this is basically equivalent to :
+
+```python
+import base.js.namespace as IPython
+```
+
+
+Now in your `_on_load` you can access `IPython.<things>`. If you fail
+to use the above way of declaring import, IPython might still be accessible on your
+machine with your current workload. Though it might break in some cases.
+Using `define([...])` insure in the dependency graph that the right file is loaded,
+and that the local name will be `IPython` (hint, in next release the global name might be `Jupyter`).
+
+Ok, now let's make a detour and [Keyboard Shortcut](./keyboardshortcut.md).
+
+A few things you might need :
+
+```javascript
+var internal_name = IPython.keyboard_manager.actions.register(data, name , `scipy-2015`)
+IPython.keyboard_manager.command_shortcuts.remove_shortcut(string)
+IPython.keyboard_manager.command_shortcuts.add_shortcut(string, internal_name)
+```
+
+The notebook instance have a `clear_all_output` method, and a `kernel` attribute.
+The `kernel` instance has a `restart` method that have a `on_success` and `on_error` callbacks.
+
+
+...
+
+have you figured it out ?
+
+My solution:
+
+```js
+function (env) {
+    var on_success = undefined;
+    var on_error = undefined;
+
+    env.notebook.clear_all_output();
+    env.notebook.kernel.restart(function(){
+          setTimeout(function(){ // wait 1 sec,
+              // todo listen on Kernel ready event.
+              console.log('executing all cells')
+              env.notebook.execute_all_cells()
+          }, 1000)
+        },
+        on_error // Todo also
+    );
+}
+```
+
+```js
+// register our new action
+var action_name = IPython.keyboard_manager.actions.register(
+      clear_all_cell_restart,
+      'clear-all-cells-restart',
+      'scipy-2015')
+
+// unbind 00
+IPython.keyboard_manager.command_shortcuts.remove_shortcut('0,0')
+
+// bind 000
+IPython.keyboard_manager.command_shortcuts.add_shortcut('0,0,0', action_name)
+```
+
+
+### Why use an action. 
