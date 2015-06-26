@@ -85,15 +85,19 @@ IPython.keyboard_manager.actions.register
 Choose icons from [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/)
 
 ```
-'clear-all-cell-restart' : {
-            help: 'Clear all cell and restart kernel without confirmations',
-            icon : 'fa-recycle',
-            help_index : 'ed',
-            handler : function (env) {
-                env.notebook.insert_cell_below();
-                env.notebook.select_next();
-                env.notebook.focus_cell();
-            }
-        },
+var clear_all_cell_restart = {
+    help: 'Clear all cell and restart kernel without confirmations',
+    icon : 'fa-recycle',
+    help_index : '',
+    handler : function (env) {
+        var on_success = undefined;
+        var on_error = undefined;
+        env.notebook.clear_all_output();
+        env.notebook.kernel(on_succes, on_error);
+    }
+}
+```
 
+```
+IPython.keyboard_manager.actions.register(clear_all_cell_restart, 'clear-all-cells-restart', 'scipy-2015')
 ```

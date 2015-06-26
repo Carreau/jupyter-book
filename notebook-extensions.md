@@ -202,7 +202,9 @@ You just need to know that following exist, and take a list of action names:
 
 `IPython.toolbar.add_buttons_group`
 
-Now, go edit your custom extension !
+Now, go edit your custom extension ! You can also try to install `markcell.js` extension,
+`require()` it in your extension and try to use someof the methods defined in it.
+This show you how to spread your extension potentially across many files.
 
 Here is my solution:
 
@@ -212,3 +214,58 @@ IPython.toolbar.add_buttons_group(['scipy-2015.clear-all-cells-restart','ipython
 
 each call to this API will generate a new group of button with the default icons,
 and if you hover the button the help text will remind you the action.
+
+
+
+### interact with user
+
+You can ask a value with the `base/js/dialog` module that have some convenience function.
+
+This module have a `modal` function that you can use like that:
+
+```
+dialog.modal({
+    body: text_or_dom_node , // jQuery is you friend
+    title: string,
+    buttons: {
+      'Ok':{
+            class: 'btn-primary',
+            click: on_ok_callback
+            },
+      'Cancell':{
+              //... (or nothing to just dismiss )
+            }
+    },
+    notebook:env.notebook,
+    keyboard_manager: env.notebook.keyboard_manager,
+})
+```
+
+
+### server side handler.
+
+Ok, enough javascript (for now). Let's get back into a sane language.
+Notebook extension on the client-side have been there for quite a while,
+and we recently added the ability to have a server side extension.
+
+Server side extension are, as any IPython extension simply Python modules that
+define a specific method. In our case `load_jupyter_server_extension`
+(Yes we are ready for the future).
+
+Here is the minimal extension you can have:
+
+```python
+def load_jupyter_server_extension(nbapp):
+    pass
+```
+
+I've already provided that for you, in the `extensions` dir.
+You can try to run the following, and look at the console while starting the notebook,
+you will be able to see a new login message.
+
+```
+python3 -m IPython  notebook --notebook-dir=~ --NotebookApp.server_extensions="['extensions.server_ext']"
+```
+
+
+Now let's add a handler capable of preating requests:
