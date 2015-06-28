@@ -50,7 +50,7 @@ By updating the config, we can register a new extension to be loaded on start up
 
 First, the new config value is created:
 ```
-var new_data = {"my_ext":true}
+var new_data = {"load_extensions":{"my_ext":true}}
 ```
 The value assigned to `"my_ext"` should be non-`null`. Setting the value to `null` would remove the key from the configuration object. However, to keep everthing clear and clean, `true` should be used.
 
@@ -63,7 +63,7 @@ IPython.notebook.config.update(new_data)
 Or as a one-liner:
 
 ```
-IPython.notebook.config.update({"my_ext":true})
+IPython.notebook.config.update({"load_extensions":{"my_ext":true}})
 ```
 
 
@@ -74,7 +74,10 @@ For example in  our case :
 ```
 // notebook.json
 {
-  {"my_ext":true}
+  {
+  "load_extensions":
+    {"my_ext":true}
+  }
 }
 ```
 
