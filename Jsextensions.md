@@ -74,9 +74,8 @@ For example in  our case :
 ```
 // notebook.json
 {
-  {
-  "load_extensions":
-    {"my_ext":true}
+  "load_extensions": {
+    "my_ext": true
   }
 }
 ```
