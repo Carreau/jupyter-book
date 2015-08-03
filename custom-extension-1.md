@@ -22,7 +22,7 @@ IPython.notebook.config.update({
 
 And set past this in `main.js` created above.
 
-```
+```javascript
 define(function(){
 
     var execute_selection= function (cell, stop_on_error) {
