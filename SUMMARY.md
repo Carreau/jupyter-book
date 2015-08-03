@@ -10,5 +10,6 @@ Does pushing on github trigger build
 * [Kernel JS](kerneljs.md)
 * [JS Nbextensions](Jsextensions.md)
 * [Keyboard Mapping](keyboardshortcut.md)
+* [Custom extension 1](custom-extension-1.md)
 
 Last update June 9th
