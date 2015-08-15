@@ -9,7 +9,7 @@ The way we write Jupyter/IPython is to provide the minimal sensible default, wit
 
 Extensions can be composed of many pieces, but you will mostly find a Javascript part that live on the frontend side (ie, the Browser, written in Javascript), and a part that live on the server side (written in Python). We will, in a first time mostly focus on the Javascript side.
 
-A large number of repo exist here and there o nthe internet, and we haven't taken the time to write a Jupyter Store (yet), to make extension easily installable. Well I suppose this can be done as an extension, and your research on the web will probably show that it can be done, but we will still focus on the old manual way of installing extension to learn how things works, because that's why you are here right ?
+A large number of repo exist here and there on the internet, and we haven't taken the time to write a Jupyter Store (yet), to make extension easily installable. Well I suppose this can be done as an extension, and your research on the web will probably show that it can be done, but we will still focus on the old manual way of installing extension to learn how things works, because that's why you are here right ?
 
 Ok, so here are link to some active repos, with extensions:
 
