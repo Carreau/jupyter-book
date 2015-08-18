@@ -1,31 +1,31 @@
 # Notebook extensions
 
-Notebook extensions, or plugins allow end user to highly control the behavior and the appeareance of the Notebook application.
+Notebook extensions, or plugins, allow the end user to highly control the behavior and the appeareance of the Notebook application.
 
-Extensions capability can highly vary from beeing able to load notebook files from [Google Drive](https://github.com/jupyter/jupyter-drive), or PostGresSql server, Presenting Notebook in the form of Slideshow, or by just adding a convenient button or keyboard shortcut for an action the user is often doing.
+Extensions capability can highly vary from being able to load notebook files from [Google Drive](https://github.com/jupyter/jupyter-drive), or PostGresSql server, presenting the Notebook in the form of Slideshow, or by just adding a convenient button or keyboard shortcut for an action the user is often doing.
 
-The way we write Jupyter/IPython is to provide the minimal sensible default, with easy access to configuration for extension to modify behavior.
-
-
-Extensions can be composed of many pieces, but you will mostly find a Javascript part that live on the frontend side (ie, the Browser, written in Javascript), and a part that live on the server side (written in Python). We will, in a first time mostly focus on the Javascript side.
-
-A large number of repo exist here and there on the internet, and we haven't taken the time to write a Jupyter Store (yet), to make extension easily installable. Well I suppose this can be done as an extension, and your research on the web will probably show that it can be done, but we will still focus on the old manual way of installing extension to learn how things works, because that's why you are here right ?
-
-Ok, so here are link to some active repos, with extensions:
-
- - https://github.com/ipython-contrib/IPython-notebook-extensions – check out the rigth branch dependsing on your version of IPython. If you are using IPython 3.x you most likely want extension from the 3.x branch.
- - https://bitbucket.org/ipre/calico/ look in the notebook/nbextesion folder.
+The way we write Jupyter/IPython is to provide the minimal sensible default, with easy access to configuration for extensions to modify behavior.
 
 
-Ok, let's go. I've made a minimal extension for you in extensions, link or move it over into:
+Extensions can be composed of many pieces, but you will mostly find a Javascript part that lives on the frontend side (ie, the Browser, written in Javascript), and a part that lives on the server side (written in Python). We will, for a first time, mostly focus on the Javascript side.
+
+A large number of repos exist here and there on the internet and we haven't taken the time to write a Jupyter Store (yet) to make extensions easily installable. Well I suppose this can be done as an extension, and your research on the web will probably show that it can be done, but we will still focus on the old manual way of installing extensions to learn how things work because that's why you are here right ?
+
+Here are links to some active repos with extensions:
+
+ - https://github.com/ipython-contrib/IPython-notebook-extensions – check out the right branch depending on your version of IPython. If you are using IPython 3.x you most likely want extensions from the 3.x branch.
+ - https://bitbucket.org/ipre/calico/ look in the notebook/nbextension folder.
+
+
+I've made a minimal extension for you in extensions. Link or move it over into:
 
 ```bash
 $ ls ~/.ipython/nbextensions/
 hello-scipy.js
 ```
 
-Ok, so now let's open a notebook and configure it to load the extension automatically.
-In a new notebook, or the one I provides with a reminder of the instructions, open the developer console
+Now let's open a notebook and configure it to load the extension automatically.
+In a new notebook, or the one I provided with a reminder of the instructions, open the developer console
 and enter the following:
 
 
@@ -39,13 +39,12 @@ Now Reload your page, and observe the Javascript console, it should tell you wha
 
 ## Explanation
 
-Do not be preoccupied with what `IPython.notebook.config.update` is we will see that later.
+Do not be preoccupied with what `IPython.notebook.config.update` is. We will see that later.
 
-The `"load_extensions"` part take a dict with the name of extensions and wether they are loaded
-or not. It is one of the config value which is now stored on server side.
+The `"load_extensions"` part takes a dict with the name of extensions and whether they are loaded
+or not. It is one of the config values which is now stored on server side.
 
-There is a way to activate extensions from outside the notebook, but we won't see
-that for now.
+There is a way to activate extensions from outside the notebook but we won't use that for now.
 
 ### The extension
 
@@ -60,10 +59,10 @@ define(function(){
 })
 ```
 
-The define call: `define(function(){` suggest we have no dependencies,
+The define call: `define(function(){` suggests we have no dependencies.
 
 For readability we define a function that will be called on notebook load at the right time.
-We keep python convention that `_xxx` is private.
+We keep the python convention that `_xxx` indicates a private function.
 ```js
   function _on_load(){
         console.info('Hello SciPy 2015')
@@ -76,22 +75,22 @@ be inaccessible for the rest of the code. You can see that as Python's `__all__`
 
 Note that you will find legacy extensions on the internet that **do not define**
 `load_ipython_extension` and rely on IPython's Events, and `Custom.js`.
-While it does work for the time being, theses extensions will break in the future
+While this does work for the time being, these extensions will break in the future
 and are subject to race conditions.
 
-While our Javascript API is still highly in motion, and not guarantied stable,
-will try our best to make updating extension that use `load_ipython_extension` easier
-that the ones using Events and `custom.js` !
+While our Javascript API is still highly in motion, and not guaranteed stable,
+we will try our best to make updating extensions that use `load_ipython_extension` easier
+than the ones using Events and `custom.js` !
 
 
 ## New keyboard shortcut !
 
-Ok, so now let's modify our extension in order to be able to actually modify the
-User interface. We will try-to create a shortcut that kill the kernel without confirmation,
-and clear all the cell, plus re-run all the things.
+Now let's modify our extension in order to be able to actually modify the
+User interface. We will try to create a shortcut that kills the kernel without confirmation,
+clears all the cell output, and finally re-runs all cells.
 
-First things, we want to get access to all the IPython instance, to do so we want
-to import the right module so that `IPython` variable can be used safely.
+First, we want to get access to the IPython instance. To do so we want
+to import the right module so that the `IPython` variable can be used safely.
 
 Change the first line to the following
 
@@ -110,10 +109,10 @@ import base.js.namespace as IPython
 Now in your `_on_load` you can access `IPython.<things>`. If you fail
 to use the above way of declaring import, IPython might still be accessible on your
 machine with your current workload. Though it might break in some cases.
-Using `define([...])` insure in the dependency graph that the right file is loaded,
+Using `define([...])` insures in the dependency graph that the right file is loaded
 and that the local name will be `IPython` (hint, in next release the global name might be `Jupyter`).
 
-Ok, now let's make a detour and [Keyboard Shortcut](./keyboardshortcut.md).
+Now let's make a detour and [Keyboard Shortcut](./keyboardshortcut.md).
 
 A few things you might need :
 
@@ -123,8 +122,8 @@ IPython.keyboard_manager.command_shortcuts.remove_shortcut(string)
 IPython.keyboard_manager.command_shortcuts.add_shortcut(string, internal_name)
 ```
 
-The notebook instance have a `clear_all_output` method, and a `kernel` attribute.
-The `kernel` instance has a `restart` method that have a `on_success` and `on_error` callbacks.
+The notebook instance has a `clear_all_output` method, and a `kernel` attribute.
+The `kernel` instance has a `restart` method that uses `on_success` and `on_error` callbacks.
 
 
 ...
@@ -166,13 +165,13 @@ IPython.keyboard_manager.command_shortcuts.add_shortcut('0,0,0', action_name)
 ```
 
 
-### Why use an action.
+### Why use an action?
 
 How are things up until now ? You might feel like the code is a bit too verbose,
-and that some part are unnecessary right ? Now we will start to see why we use such
+and that some parts are unnecessary right ? Now we will start to see why we use such
 verbose methods.
 
-You might have seen that some attributes of action seem to be unused.
+You might have seen that some attributes of actions seem to be unused.
 
 ```
 help: 'Clear all cell and restart kernel without confirmations',
@@ -180,31 +179,31 @@ icon : 'fa-recycle',
 help_index : '',
 ```
 
-Now that your extension works go get a look in the help menu, keyboard shortcut submenu.
+Now that your extension works go take a look in the help menu, keyboard shortcut submenu.
 If all is fine, you should see your new shortcut in there, with the help text.
-The help index is use to order/group the common shortcut together. The only last
+The help index is use to order/group the common shortcuts together. The only last
 unused piece is the icon.
 
-With all theses attribute, you can easily bind an _action_, to either a keyboard shortcut,
+With all these attribute, you can easily bind an _action_, to either a keyboard shortcut,
 a button in a toolbar, or in a menu item (api is not there yet for that though).
 We often saw people wanting the same action in two places, and duplicating code,
-which is a bit painful. By defining action separately this make it easy to use these
-in many places keeping it DRY. This also allow you to distribute actions library
-without actually binding them and let user do their own key/icon bindings.
+which is a bit painful. By defining actions separately it is easy to use these
+in many places keeping it DRY. This also allows you to distribute actions libraries
+without actually binding them and lets the users do their own key/icon bindings.
 
 Let see that in next section with toolbars.
 
-### toolbars.
+### Toolbars.
 
-Ok, that will be pretty simple you already did all the job :-)
+This will be pretty simple since you already did all the work :-)
 
-You just need to know that following exist, and take a list of action names:
+You just need to know that the following exists, and takes a list of action names:
 
 `IPython.toolbar.add_buttons_group`
 
-Now, go edit your custom extension ! You can also try to install `markcell.js` extension,
-`require()` it in your extension and try to use someof the methods defined in it.
-This show you how to spread your extension potentially across many files.
+Now, go edit your custom extension ! You can also try to install the `markcell.js` extension,
+`require()` it in your extension and try to use some of the methods defined in it.
+This shows you how to spread your extension potentially across many files.
 
 Here is my solution:
 
@@ -212,16 +211,16 @@ Here is my solution:
 IPython.toolbar.add_buttons_group(['scipy-2015.clear-all-cells-restart','ipython.restart-kernel'])
 ```
 
-each call to this API will generate a new group of button with the default icons,
-and if you hover the button the help text will remind you the action.
+each call to this API will generate a new group of buttons with the default icons,
+and if you hover the button the help text will remind you of the action.
 
 
 
-### interact with user
+### Interact with user
 
-You can ask a value with the `base/js/dialog` module that have some convenience function.
+You can ask a value with the `base/js/dialog` module that has some convenience functions.
 
-This module have a `modal` function that you can use like that:
+This module has a `modal` function that you can use like this:
 
 ```
 dialog.modal({
@@ -242,13 +241,13 @@ dialog.modal({
 ```
 
 
-### server side handler.
+### Server side handler.
 
 Ok, enough javascript (for now). Let's get back into a sane language.
-Notebook extension on the client-side have been there for quite a while,
+Notebook extensions on the client-side have been there for quite a while
 and we recently added the ability to have a server side extension.
 
-Server side extension are, as any IPython extension simply Python modules that
+Server side extension are, as any IPython extension, simply Python modules that
 define a specific method. In our case `load_jupyter_server_extension`
 (Yes we are ready for the future).
 
@@ -259,8 +258,8 @@ def load_jupyter_server_extension(nbapp):
     pass
 ```
 
-I've already provided that for you, in the `extensions` dir.
-You can try to run the following, and look at the console while starting the notebook,
+I've already provided that for you in the `extensions` dir.
+You can try to run the following.  If you look at the console while starting the notebook
 you will be able to see a new login message.
 
 ```
