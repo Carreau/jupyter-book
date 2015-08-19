@@ -3,7 +3,7 @@
 I'll respond to the following question in [issue 252 of jupyter notebook repo](https://github.com/jupyter/notebook/issues/252#issuecomment-127368408). 
 
 
-So first we want to create or extension folder, I'll do it directly in `~/.jupyter/nbextensions/runselected/main.js` on Linux, 
+First we want to create our extension folder. I'll do it directly in `~/.jupyter/nbextensions/runselected/main.js` on Linux,
 `~/Library/Jupyter/nbextensions/runselected/main.js` on OS X, God knows where on Windows. 
 
 ```bash
@@ -20,7 +20,7 @@ IPython.notebook.config.update({
 })
 ```
 
-And set past this in `main.js` created above.
+And add the following to `main.js` created above.
 
 ```javascript
 define(function(){

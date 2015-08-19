@@ -1,21 +1,21 @@
 # JS extension. 
 
 Contrary to general IPython extensions, Jupyter notebook extensions are written in javascript (or css).
-They are used to change the behaviour, functionality and UI of the Jupyter notebook. 
+They are used to change the behaviour, functionality or UI of the Jupyter notebook.
 
-Most of the time, you  should install *nbextensions* in the directory of the same name, either system wide or in your user profile. Most nbextensions provide the documentation to indicate how they should be installed.
+Most of the time you should install *nbextensions* in the directory of the same name, either system wide or in your user profile. Most nbextensions provide the documentation to indicate how they should be installed.
 
 ## Activating nbextensions
 
-This part describe how to decide which nbextensions are loaded. If you are an end-user, and not interested in developing your own nbextension, you can skip this section.
+This part describes how to decide which nbextensions are loaded. If you are an end-user, and not interested in developing your own nbextension, you can skip this section.
 
 `Nbextension` can easily be loaded using their name, if
 
-  - they are installed in one of the local, or global `nbextension` folder
+  - they are installed in either the local or global `nbextension` folders
   - their entry point is named `<extensionname>.js`
   - the extension defines an AMD module definition that exposes the method `load_ipython_extension`
 
-Here is a minimal example of AMD extension.
+Here is a minimal example of an AMD extension.
 
 ```javascript
 define(function(){
@@ -29,7 +29,7 @@ define(function(){
   };
 })
 ```
-Without further doing, the extension can be dynamically loaded inside of a Jupiter notebook:
+Without further action, the extension can be dynamically loaded inside of a Jupiter notebook:
 
 ```javascript
 %%javascript
@@ -67,7 +67,7 @@ IPython.notebook.config.update({"load_extensions":{"my_ext":true}})
 ```
 
 
-The config is technically store as a json object in  `~/.ipython/profile_default/nbconfig/notebook.json`
+The config is technically stored as a json object in  `~/.ipython/profile_default/nbconfig/notebook.json`
 
 For example in  our case : 
 
@@ -80,7 +80,7 @@ For example in  our case :
 }
 ```
 
-You should not update this file manually as it can be used by extension authors to modify configuration programatically. Extensions authors can also provide more convienint methods to activate extensions. 
+You should not update this file manually as it can be used by extension authors to modify configuration programmatically. Extension authors can also provide more convenient methods to activate extensions. 
 
 
 
