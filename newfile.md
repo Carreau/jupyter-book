@@ -18,7 +18,7 @@ you can use either the programatic API with the same name
 
 `ipython install-nbextension path/url`
 
-this shoud install the file for the extension in `/usr/share/jupyterhub` so that they could be shared between all notebook users.
+this should install the file for the extension in `/usr/share/jupyterhub` so that they could be shared between all notebook users.
 
 
 
