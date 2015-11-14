@@ -37,7 +37,7 @@ IPython.load_extensions('custom_shortcuts');
 ```
 
 To load the extension automatically on start up, the IPython configuration has to be modified. 
-To see the current value of the config in a noteobook, open a Jupiter notebook, and type the following in the javascript console of your browser: 
+To see the current value of the config in a notebook, open a Jupiter notebook, and type the following in the javascript console of your browser: 
 
 ```javascript
 IPython.notebook.config
