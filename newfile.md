@@ -3,7 +3,7 @@ this is a collaborative book, please feel free to contribute.
 
 # Notebook Customisation
 
-The web notebook is an extremely flexible application completely built in javascript, html and cs, which allows many modifications
+The web notebook is an extremely flexible application completely built in javascript, html and css, which allows many modifications
 to be done to the frontend.
 
 

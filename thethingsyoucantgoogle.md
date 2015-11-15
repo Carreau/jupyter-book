@@ -8,12 +8,12 @@ Let's take for example `html5 website` (I want https://html5.org/). Google has d
 
 # jQuery (aka `$`)
 
-In Javascript `$` is a valid identifier. By convention, a widely used Javascript library known a [`jQuery`](jquery.org) injects itself in global namespace as `$`. Unless when it's not, in which case `$` might be browser native interface that looks and behave almost like jQuery, but only in console.
+In Javascript `$` is a valid identifier. By convention, a widely used Javascript library known as [`jQuery`](jquery.org) injects itself in global namespace as `$`. Unless when it's not, in which case `$` might be browser native interface that looks and behave almost like jQuery, but only in console.
 
 If you could write jQuery as a python package, it is would be the following.
 
 A callable module that behaves sometimes as a class constructor, and has static methods that are getters and setters (with the same name, depending on the number of parameters). It also executes code at startup, add some importhook mechanism and probably rewrite the Ast.
-[Q](https://pypi.python.org/pypi/q) is probably the kind of things that get closest to that. It is aweful, but we have not done better, and you can't live without it.
+[Q](https://pypi.python.org/pypi/q) is probably the kind of things that get closest to that. It is awful, but we have not done better, and you can't live without it.
 
 Anyway, you will see different constructs: `$(...)`, and `$.something`. The first is a convenient wrapper around DOM (or collection of DOM) elements. It allow you to get some short and readable syntax like `$('.cell:odd').remove()` instead of:
 
@@ -88,7 +88,7 @@ Most of the time the library bound to `_` is called "Underscore", but also rarel
 
 ## IIFE
 
-You might find the following Here and there. These are Immediately Invoked Function Expression. You might find them:
+You might find the following Here and there. These are Inmediately Invoked Function Expression. You might find them:
 
  - At module/file level
  - In loops.

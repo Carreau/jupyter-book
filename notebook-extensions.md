@@ -231,7 +231,7 @@ dialog.modal({
             class: 'btn-primary',
             click: on_ok_callback
             },
-      'Cancell':{
+      'Cancel':{
               //... (or nothing to just dismiss )
             }
     },
@@ -247,7 +247,7 @@ Ok, enough javascript (for now). Let's get back into a sane language.
 Notebook extensions on the client-side have been there for quite a while
 and we recently added the ability to have a server side extension.
 
-Server side extension are, as any IPython extension, simply Python modules that
+Server side extensions are, as any IPython extension, simply Python modules that
 define a specific method. In our case `load_jupyter_server_extension`
 (Yes we are ready for the future).
 

@@ -8,10 +8,10 @@ Through javascript you can access the keyboard manager.
 
 The keyboard manager maps (some) shortcuts in command and edit mode to `actions`.
 
-A shortcut is a string the represent a sequence of multiple key presses at the same time. Commas separate each step of the sequence and dashes represent keys that have to be pressed together.
+A shortcut is a string that represents a sequence of multiple key presses at the same time. Commas separate each step of the sequence and dashes represent keys that have to be pressed together.
 
 For example `a,b,c,d` represents the succession of pressing the letter A, B, C and D without modifier.
-`Shift-a,b,c,d` will have only `A`key pressed with shift modifier, and `Shift-a,Shift-b,Shift-c,Shift-d` represents holding shift and pressing `a,b,c,d` in order.
+`Shift-a,b,c,d` will have only `A` key pressed with shift modifier, and `Shift-a,Shift-b,Shift-c,Shift-d` represents holding shift and pressing `a,b,c,d` in order.
 
 Bind some existing action in command mode, in javascript console (where `>` and `<` are in and out prompt):
 
