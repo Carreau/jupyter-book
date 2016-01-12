@@ -24,7 +24,7 @@ Bind some existing action in command mode, in javascript console (where `>` and 
 < undefined
 ```
 
-To see the list of available actions, you can issue the following in the developper console:
+To see the list of available actions, you can issue the following in the developer console:
 
 ```javascript
 > $.map(

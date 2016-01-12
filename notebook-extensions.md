@@ -1,6 +1,6 @@
 # Notebook extensions
 
-Notebook extensions, or plugins, allow the end user to highly control the behavior and the appeareance of the Notebook application.
+Notebook extensions, or plugins, allow the end user to highly control the behavior and the appearance of the Notebook application.
 
 Extensions capability can highly vary from being able to load notebook files from [Google Drive](https://github.com/jupyter/jupyter-drive), or PostGresSql server, presenting the Notebook in the form of Slideshow, or by just adding a convenient button or keyboard shortcut for an action the user is often doing.
 
