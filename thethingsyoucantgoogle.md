@@ -44,11 +44,11 @@ In Javascript you will often find the following construct :
 var that = this;
 ```
 
-This, or should I say that, is often confusing for the newcomer, especially if he or she comes from a Python background. The reason is simple: the parallel is easy between `self` and `this`. Though, as Javascript is prototype based and does not really have the notion of objects like python, `this` does often not refer to what the experienced Pythonista thinks is current object.
+This, or should I say that, is often confusing for the newcomer, especially if they come from a Python background. The reason is simple: the parallel is easy between `self` and `this`. Though, as Javascript is prototype based and does not really have the notion of objects like python, `this` does often not refer to what the experienced Pythonista thinks is the current object.
 
-In Javascript, there is no real difference between objects and functions. When the programmer mimics the class inheritance and believes that he is actually creating methods on a class for which `this` will refer to the current object, he is mistaken. The keyword `this` always refers to the current context the object is in, which by default is the **current function**.
+In Javascript, there is no real difference between objects and functions. When the programmer mimics the class inheritance and believes that they are actually creating methods on a class for which `this` will refer to the current object, he is mistaken. The keyword `this` always refers to the current context the object is in, which by default is the **current function**.
 
-Let's take for example the following piece of code, that could be thought of as the `execute` method of a cell :
+Let's take for example the following piece of code, that could be thought of as the `execute` method of a cell:
 
 ```javascript`
 
@@ -72,7 +72,7 @@ Cell.prototype.execute = function(delay){
 ```
 
 As the comment points out, `this` does refer to the current function. The way around that is to use a closure around `that`, hence the `var that = this`.
-A second similar construct one could find, is the use of `$.proxy`. That will set the context (value of `this` of a callback). It is about the same as using a close except for the fact that `$.proxy` can be used on functions you did not construct, or for which you cannot create a closure around the context you like.
+A second similar construct one could find, is the use of `$.proxy`. That will set the context (value of `this` of a callback). It is about the same as using a closure except for the fact that `$.proxy` can be used on functions you did not construct, or for which you cannot create a closure around the context you like.
 
 ## Underscore (aka `_`),
 
